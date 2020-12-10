@@ -45,12 +45,50 @@ class PostViewModel: ObservableObject {
         let title = doc.document.data()["title"] as! String
         let time = doc.document.data()["time"] as! Timestamp
         let picture = doc.document.data()["url"] as! String
-        let userRef = doc.document.data()["ref"] as! String
+        let userRef = doc.document.data()["ref"]  as! DocumentReference
 
-//        Fetch.user(uid: userRef.documentID) { user in
-//
-//        }
+        Fetch.user(uid: userRef.documentID) { [weak self] user in
+          self?.posts.append(PostModel(id: doc.document.documentID,
+                                       title: title, picture: picture, date: time.dateValue(), user: user))
+          self?.posts.sort { (p1, p2) -> Bool in
+            return p1.date > p2.date
+          }
+        }
+
+        if doc.type == .removed {
+          let id = doc.document.documentID
+          self?.posts.removeAll { post -> Bool in
+            return post.id == id
+          }
+        }
+
+        if doc.type == .modified {
+          let id = doc.document.documentID
+          let title = doc.document.data()["title"] as! String
+
+          let index = self?.posts.firstIndex { post -> Bool in
+            return post.id == id
+          } ?? -1  //FIXME: - Should not do this
+
+          if index != -1 {
+            self?.posts[index].title = title
+            self?.updateId = ""
+          }
+        }
       }
     }
+  }
+
+  func delete(post id: String) {
+    firestore.collection("Posts").document(id).delete() { error in
+      if error != nil {
+        print(error?.localizedDescription ?? "\(#function) - Unknown Error")
+      }
+    }
+  }
+
+  func edit(post id: String) {
+    updateId = id
+    newPost.toggle()
   }
 }

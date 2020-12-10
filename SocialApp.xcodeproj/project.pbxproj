@@ -36,6 +36,8 @@
 		621D0A4C25826579003110B6 /* FirebaseDynamicLinks in Frameworks */ = {isa = PBXBuildFile; productRef = 621D0A4B25826579003110B6 /* FirebaseDynamicLinks */; };
 		621D0A4E25826579003110B6 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 621D0A4D25826579003110B6 /* FirebaseRemoteConfig */; };
 		6278EFC525826FF70031CAD6 /* ChatUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6278EFC425826FF70031CAD6 /* ChatUIApp.swift */; };
+		6286CE732582AB030083D74B /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6286CE722582AB030083D74B /* SettingsViewModel.swift */; };
+		6286CE782582B22C0083D74B /* NewPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6286CE772582B22C0083D74B /* NewPost.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +83,8 @@
 		621D0A2225825CC9003110B6 /* PostView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
 		621D0A3325825D62003110B6 /* NewPostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostModel.swift; sourceTree = "<group>"; };
 		6278EFC425826FF70031CAD6 /* ChatUIApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatUIApp.swift; sourceTree = "<group>"; };
+		6286CE722582AB030083D74B /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		6286CE772582B22C0083D74B /* NewPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPost.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,9 +144,9 @@
 		621D09E425825BE0003110B6 /* SocialApp */ = {
 			isa = PBXGroup;
 			children = (
-				6278EFC425826FF70031CAD6 /* ChatUIApp.swift */,
 				621D09E925825BE1003110B6 /* Assets.xcassets */,
 				621D0A1F25825CC8003110B6 /* ChatAlert.swift */,
+				6278EFC425826FF70031CAD6 /* ChatUIApp.swift */,
 				621D09E725825BE0003110B6 /* ContentView.swift */,
 				621D0A1925825CC8003110B6 /* FetchUser.swift */,
 				621D0A1825825CC8003110B6 /* Home.swift */,
@@ -151,13 +155,15 @@
 				621D09EE25825BE1003110B6 /* Info.plist */,
 				621D0A1A25825CC8003110B6 /* Login.swift */,
 				621D0A1E25825CC8003110B6 /* LoginViewModel.swift */,
+				621D0A3325825D62003110B6 /* NewPostModel.swift */,
 				621D0A2225825CC9003110B6 /* PostView.swift */,
 				621D0A1625825CC8003110B6 /* PostViewModel.swift */,
 				621D09EB25825BE1003110B6 /* Preview Content */,
 				621D0A1B25825CC8003110B6 /* Register.swift */,
 				621D0A1D25825CC8003110B6 /* RegisterViewModel.swift */,
+				6286CE722582AB030083D74B /* SettingsViewModel.swift */,
 				621D09E525825BE0003110B6 /* SocialAppApp.swift */,
-				621D0A3325825D62003110B6 /* NewPostModel.swift */,
+				6286CE772582B22C0083D74B /* NewPost.swift */,
 			);
 			path = SocialApp;
 			sourceTree = "<group>";
@@ -340,12 +346,14 @@
 				621D09E825825BE0003110B6 /* ContentView.swift in Sources */,
 				621D0A2525825CC9003110B6 /* Home.swift in Sources */,
 				621D0A2C25825CC9003110B6 /* ChatAlert.swift in Sources */,
+				6286CE782582B22C0083D74B /* NewPost.swift in Sources */,
 				621D09E625825BE0003110B6 /* SocialAppApp.swift in Sources */,
 				621D0A2825825CC9003110B6 /* Register.swift in Sources */,
 				621D0A2625825CC9003110B6 /* FetchUser.swift in Sources */,
 				621D0A2F25825CC9003110B6 /* PostView.swift in Sources */,
 				621D0A3425825D62003110B6 /* NewPostModel.swift in Sources */,
 				621D0A2E25825CC9003110B6 /* ImageService.swift in Sources */,
+				6286CE732582AB030083D74B /* SettingsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
